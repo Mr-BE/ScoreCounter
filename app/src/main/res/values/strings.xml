@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Score Counter</string>
+
+    <!--Home Team-->
+    <string name="home_team"> Nigeria </string>
+    <!--Away Team-->
+    <string name="away_team"> Argentina </string>
+    <!--Goal-->
+    <string name="goal">Goal</string>
+    <!--Foul-->
+    <string name="foul">Foul</string>
+    <!--Yellow Card-->
+    <string name="yellow">Yellow</string>
+    <!--Red Card-->
+    <string name="red">Red</string>
+    <!--Possession-->
+    <string name="possession">POSSESSION</string>
+   <string name="possession_value">50</string>
+    <!--Details-->
+    <string name="details">Match Details</string>
+    <!--Reset-->
+    <string name="reset"> Reset </string>
+    <!--Zero value-->
+    <string name="zero">0</string>
+
+    <!--Plus sign-->
+    <string name="plus">+</string>
+
+
+</resources>

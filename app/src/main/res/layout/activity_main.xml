@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="205dp"
+            android:layout_alignParentTop="true"
+            android:alpha="0.7"
+            android:scaleType="centerCrop"
+            android:src="@drawable/wood3" />
+
+
+        <LinearLayout
+            android:id="@+id/nested_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <!--Team A-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:padding="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/home_team"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+                <!--Logo and Score-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="46dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginStart="32dp"
+                        android:contentDescription="@string/home_team"
+                        android:gravity="center_horizontal"
+                        android:src="@drawable/nig" />
+
+                    <TextView
+                        android:id="@+id/home_team_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="end"
+                        android:text="@string/zero"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="46sp" />
+                </LinearLayout>
+
+                <!--Possession Details-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:orientation="horizontal"
+                    android:paddingEnd="16dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="16dp"
+                    android:paddingStart="32dp">
+
+
+                    <TextView
+                        android:id="@+id/home_possession_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/possession_value"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:alpha="1"
+                        android:contentDescription="@string/possession"
+                        android:src="@drawable/football"
+
+                        />
+                </LinearLayout>
+
+                <!--Fouls-->
+                <LinearLayout
+                    android:id="@+id/fouls_home_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/home_foul_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/zero"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@string/foul"
+                        android:src="@drawable/whistle"
+
+                        />
+                </LinearLayout>
+                <!--Yellow cards-->
+                <LinearLayout
+                    android:id="@+id/yellow_card_home_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/home_yellow_card_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/zero"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@string/yellow"
+                        android:src="@drawable/yellow"
+
+                        />
+                </LinearLayout>
+
+                <!--Red Card -->
+                <LinearLayout
+                    android:id="@+id/red_card_home_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/home_red_card_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/zero"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@string/red"
+                        android:src="@drawable/redcad"
+
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorSecondaryText" />
+
+                <!--Add Details-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:onClick="addGoalHome"
+                        android:text="@string/goal" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/colorDivider" />
+                <!--Yellow card-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:onClick="addYellowHome"
+                        android:text="@string/yellow" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorDivider" />
+                <!--Red Card-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:onClick="addRedHome"
+                        android:text="@string/red" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorDivider" />
+                <!--Fouls committed-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:onClick="addFoulHome"
+                        android:text="@string/foul" />
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorDivider" />
+                <!--Possession-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/possession_text_home"
+                        style="@style/ButtonStyle"
+                        android:text="@string/possession"
+                        android:textSize="13sp"
+
+                        />
+
+                    <Button
+                        style="@style/MinorButtonStyle"
+                        android:layout_width="27dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_toRightOf="@id/possession_text_home"
+                        android:onClick="addPossessionHome"
+                        android:text="@string/plus">
+
+                    </Button>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorSecondaryText" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDivider">
+
+            </View>
+
+            <!--Team B-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:padding="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/away_team"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+                <!--Logo and Score-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="46dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginStart="32dp"
+                        android:contentDescription="@string/away_team"
+                        android:gravity="center_horizontal"
+                        android:src="@drawable/arg" />
+
+                    <TextView
+                        android:id="@+id/away_team_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="end"
+                        android:text="@string/zero"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="46sp" />
+                </LinearLayout>
+
+                <!--Possession Details-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:orientation="horizontal"
+                    android:paddingEnd="16dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="16dp"
+                    android:paddingStart="32dp">
+
+
+                    <TextView
+                        android:id="@+id/away_possession_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/possession_value"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:alpha="1"
+                        android:contentDescription="@string/possession"
+                        android:src="@drawable/football"
+
+                        />
+                </LinearLayout>
+
+                <!--Fouls-->
+                <LinearLayout
+                    android:id="@+id/fouls_away_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/away_foul_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/zero"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@string/foul"
+                        android:src="@drawable/whistle"
+
+                        />
+                </LinearLayout>
+                <!--Yellow cards-->
+                <LinearLayout
+                    android:id="@+id/yellow_card_away_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/away_yellow_card_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/zero"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@string/yellow"
+                        android:src="@drawable/yellow"
+
+                        />
+                </LinearLayout>
+
+                <!--Red Card -->
+                <LinearLayout
+                    android:id="@+id/red_card_away_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/away_red_card_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/zero"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@string/red"
+                        android:src="@drawable/redcad"
+
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorSecondaryText" />
+
+                <!--Add Details-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:onClick="addGoalAway"
+                        android:text="@string/goal" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/colorDivider" />
+                <!--Yellow card-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:onClick="addYellowAway"
+                        android:text="@string/yellow" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorDivider" />
+                <!--Red Card-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:onClick="addRedAway"
+                        android:text="@string/red" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorDivider" />
+                <!--Fouls committed-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:onClick="addFoulAway"
+                        android:text="@string/foul" />
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorDivider" />
+                <!--Possession-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/possession_text_away"
+                        style="@style/ButtonStyle"
+                        android:text="@string/possession"
+                        android:textSize="13sp" />
+
+                    <Button
+                        style="@style/MinorButtonStyle"
+                        android:layout_width="27dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_toRightOf="@id/possession_text_away"
+                        android:onClick="addPossessionAway"
+                        android:text="+">
+
+                    </Button>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorSecondaryText" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            style="@style/ResetStyle"
+            android:onClick="resetButton"
+            android:text="@string/reset" />
+
+
+    </RelativeLayout>
+
+</ScrollView>
