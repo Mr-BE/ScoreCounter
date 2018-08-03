@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     //Global variables for team values
-    final int NULL_SCORE = 0;
+    int NULL_SCORE;
     final int POSSESSION_SCORE = 50;
 
     int scoreForHome = NULL_SCORE;
@@ -32,26 +32,26 @@ public class MainActivity extends AppCompatActivity {
    // Displays the given score for Home Team.
 
   public void displayForTeamHome(int score) {
-    TextView scoreView = findViewById(R.id.home_team_score);
+    TextView scoreView = findViewById(R.id.homeTeamScore);
     scoreView.setText(String.valueOf(score));
 }
 // Update home possession Display
     public void displayPossessionHome(int possession){
-      TextView homePossessionView = findViewById(R.id.home_possession_value);
+      TextView homePossessionView = findViewById(R.id.homePossessionValue);
       homePossessionView.setText(String.valueOf(possession));
     }
 
     // Display home foul
     public void displayFoulHome (int count){
       //Locate view
-        TextView homeFoulsTextView = findViewById(R.id.home_foul_value);
+        TextView homeFoulsTextView = findViewById(R.id.homeFoulValue);
         //Set value to view
         homeFoulsTextView.setText(String.valueOf(count));
     }
     //Display home red cards
     public void displayRedCardHome (int count){
         //locate home team yellow card view
-        TextView homeRedText = findViewById(R.id.home_red_card_value);
+        TextView homeRedText = findViewById(R.id.homeRedCardValue);
         //set value to view
         homeRedText.setText(String.valueOf(noOfRedHome));
 
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     public void displayYellowCardHome (int count){
 
         //locate home team yellow card view
-        TextView homeYellowText = findViewById(R.id.home_yellow_card_value);
+        TextView homeYellowText = findViewById(R.id.homeYellowCardValue);
         //set value to view
         homeYellowText.setText(String.valueOf(count));
     }
@@ -70,14 +70,14 @@ public class MainActivity extends AppCompatActivity {
      * Handles goal clicks for home team
      */
     public void addGoalHome (View view){
-        scoreForHome = scoreForHome + 1;
+        scoreForHome ++;
         displayForTeamHome(scoreForHome);
     }
 
     //Handles home team foul count
     public void addFoulHome (View view){
         //increase value
-        noOfFoulsHome = noOfFoulsHome+1;
+        noOfFoulsHome ++;
         //update the home team's foul view
         displayFoulHome(noOfFoulsHome);
     }
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     //Handles home team yellow card count
     public void  addYellowHome (View view) {
         //increase yellow card count
-        noOfYellowHome = noOfYellowHome +1;
+        noOfYellowHome ++;
        //update view
         displayYellowCardHome(noOfYellowHome);
     }
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     //Handles home team red card count
     public void  addRedHome (View view) {
         //increase red card count
-        noOfRedHome = noOfRedHome+1;
+        noOfRedHome ++;
         //update view
         displayRedCardHome(noOfRedHome);
     }
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         Home side
          */
         //Locate home possession text
-        TextView currentHomePossession = findViewById(R.id.home_possession_value);
+        TextView currentHomePossession = findViewById(R.id.homePossessionValue);
         //Get string value for home team possession text field
         String currentHomePossessionText = currentHomePossession.getText().toString();
         //Convert Home team String to numerical value
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         Away Side
          */
         //Locate home possession text
-        TextView currentAwayPossession = findViewById(R.id.away_possession_value);
+        TextView currentAwayPossession = findViewById(R.id.awayPossessionValue);
         //Get string value from away team possession text field
         String currentAwayPossessionText = currentAwayPossession.getText().toString();
         //Convert above text to numerical value
@@ -147,20 +147,20 @@ public class MainActivity extends AppCompatActivity {
    // Displays the given score for Team B.
 
     public void displayForTeamAway(int score) {
-        TextView scoreView = findViewById(R.id.away_team_score);
+        TextView scoreView = findViewById(R.id.awayTeamScore);
         scoreView.setText(String.valueOf(score));
     }
 
     // Updates away possession Display
     public void displayPossessionAway (int possession){
-        TextView awayPossessionView = findViewById(R.id.away_possession_value);
+        TextView awayPossessionView = findViewById(R.id.awayPossessionValue);
         awayPossessionView.setText(String.valueOf(possession));
     }
 
     //Displays foul count for away team
     public void displayFoulAway (int foul){
         //Locate view
-        TextView awayFoulsTextView = findViewById(R.id.away_foul_value);
+        TextView awayFoulsTextView = findViewById(R.id.awayFoulValue);
         //set value
         awayFoulsTextView.setText(String.valueOf(foul));
 
@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
     //Displays red card count for away team
     public void displayRedCardAway (int count){
         //locate away team yellow card view
-        TextView awayRedText = findViewById(R.id.away_red_card_value);
+        TextView awayRedText = findViewById(R.id.awayRedCardValue);
         //set value to view
         awayRedText.setText(String.valueOf(count));
 
@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
     //Displays yellow card count for away team
     public void displayYellowCardAway (int count){
         //locate away team yellow card view
-        TextView awayYellowText = findViewById(R.id.away_yellow_card_value);
+        TextView awayYellowText = findViewById(R.id.awayYellowCardValue);
         //set value to view
         awayYellowText.setText(String.valueOf(count));
 
@@ -186,14 +186,14 @@ public class MainActivity extends AppCompatActivity {
      * Handles goal clicks for away team
      */
     public void addGoalAway(View view){
-        scoreForAway = scoreForAway + 1;
+        scoreForAway ++;
         displayForTeamAway(scoreForAway);
     }
 
     //Handles away team foul count
     public void addFoulAway (View view){
         //increase value
-        noOfFoulsAway = noOfFoulsAway+1;
+        noOfFoulsAway ++;
         //update the home team's foul view
         displayFoulAway(noOfFoulsAway);
     }
@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
     //Handles away team yellow card count
     public void  addYellowAway (View view) {
         //increase yellow card count
-        noOfYellowAway = noOfYellowAway+1;
+        noOfYellowAway ++;
        //update view
         displayYellowCardAway(noOfYellowAway);
 
@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
     //Handles away team red card count
     public void  addRedAway (View view) {
         //increase red card count
-        noOfRedAway = noOfRedAway+1;
+        noOfRedAway ++;
 
        //update view
         displayRedCardAway(noOfRedAway);
@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
         Away Side
          */
         //Locate home possession text
-        TextView currentAwayPossession = findViewById(R.id.away_possession_value);
+        TextView currentAwayPossession = findViewById(R.id.awayPossessionValue);
         //Get string value from away team possession text field
         String currentAwayPossessionText = currentAwayPossession.getText().toString();
         //Convert above text to numerical value
@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
         Home side
          */
         //Locate home possession text
-        TextView currentHomePossession = findViewById(R.id.home_possession_value);
+        TextView currentHomePossession = findViewById(R.id.homePossessionValue);
         //Get string value for home team possession text field
         String currentHomePossessionText = currentHomePossession.getText().toString();
         //Convert Home team String to numerical value
